@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Battleship</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>BattleShips</h1>
+
+    <button type="button" class="btn btn-outline-light" onclick="instructions()">How To Play</button>
+    <button type="button" class="btn btn-outline-light" id="start">Place Ships</button>
+    <button type="button" class="btn btn-outline-light" id="nextBoat">Place Carrier</button>
+    <button type="button" class="btn btn-outline-light" id="submarine">Place Submarine</button>
+    <button type="button" class="btn btn-outline-light" id="destroyer">Place Destroyer</button>
+    <button type="button" class="btn btn-outline-light" id="airCarrier">Place Air Carrier</button>
+    <button type="button" class="btn btn-outline-light" id="beginGame">Start Playing</button>
+
+    <div id="instruc">
+    <ol>
+      <li>
+        Click the start button and a form will appear at the bottom. Enter the swuare you wish to place your boat.
+        In the format Number + Capital letter. Then Click the place boat button.
+      </li>
+      <li>
+        Click the place ship button at top of page and fill in form under your board.
+        Repat this until all 5 boats are placed.
+      </li>
+      <li>
+        The start button will reappear, click this to begin game.
+      </li>
+      <li>
+        To attack the computer, click the square you wish to attack
+      </li>
+      <li>
+        The Winner is the whoever destoyer all the other persons ships first.
+      </li>
+    </ol>
+    </div>
+
+
+
+
+    <p id="currentInstruction">
+
+      </p>
+
+
+    <h3>Your Board:</h3>
+
+
+<div class="container">
+  <div class="row">
+  <div class="col topRow leftCol"></div>
+  <div class="col topRow">1</div>
+  <div class="col topRow">2</div>
+  <div class="col topRow">3</div>
+  <div class="col topRow">4</div>
+  <div class="col topRow">5</div>
+  <div class="col topRow">6</div>
+  <div class="col topRow">7</div>
+  <div class="col topRow">8</div>
+  <div class="col topRow">9</div>
+  <div class="col topRow">10</div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">A</div>
+  <div class="col" id="1A"></div>
+  <div class="col" id="2A"></div>
+  <div class="col" id="3A"></div>
+  <div class="col" id="4A"></div>
+  <div class="col" id="5A"></div>
+  <div class="col" id="6A"></div>
+  <div class="col" id="7A"></div>
+  <div class="col" id="8A"></div>
+  <div class="col" id="9A"></div>
+  <div class="col" id="10A"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">B</div>
+  <div class="col" id="1B"></div>
+  <div class="col" id="2B"></div>
+  <div class="col" id="3B"></div>
+  <div class="col" id="4B"></div>
+  <div class="col" id="5B"></div>
+  <div class="col" id="6B"></div>
+  <div class="col" id="7B"></div>
+  <div class="col" id="8B"></div>
+  <div class="col" id="9B"></div>
+  <div class="col" id="10B"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">C</div>
+  <div class="col" id="1C"></div>
+  <div class="col" id="2C"></div>
+  <div class="col" id="3C"></div>
+  <div class="col" id="4C"></div>
+  <div class="col" id="5C"></div>
+  <div class="col" id="6C"></div>
+  <div class="col" id="7C"></div>
+  <div class="col" id="8C"></div>
+  <div class="col" id="9C"></div>
+  <div class="col" id="10C"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">D</div>
+  <div class="col" id="1D"></div>
+  <div class="col" id="2D"></div>
+  <div class="col" id="3D"></div>
+  <div class="col" id="4D"></div>
+  <div class="col" id="5D"></div>
+  <div class="col" id="6D"></div>
+  <div class="col" id="7D"></div>
+  <div class="col" id="8D"></div>
+  <div class="col" id="9D"></div>
+  <div class="col" id="10D"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">E</div>
+  <div class="col" id="1E"></div>
+  <div class="col" id="2E"></div>
+  <div class="col" id="3E"></div>
+  <div class="col" id="4E"></div>
+  <div class="col" id="5E"></div>
+  <div class="col" id="6E"></div>
+  <div class="col" id="7E"></div>
+  <div class="col" id="8E"></div>
+  <div class="col" id="9E"></div>
+  <div class="col" id="10E"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">F</div>
+  <div class="col" id="1F"></div>
+  <div class="col" id="2F"></div>
+  <div class="col" id="3F"></div>
+  <div class="col" id="4F"></div>
+  <div class="col" id="5F"></div>
+  <div class="col" id="6F"></div>
+  <div class="col" id="7F"></div>
+  <div class="col" id="8F"></div>
+  <div class="col" id="9F"></div>
+  <div class="col" id="10F"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">G</div>
+  <div class="col" id="1G"></div>
+  <div class="col" id="2G"></div>
+  <div class="col" id="3G"></div>
+  <div class="col" id="4G"></div>
+  <div class="col" id="5G"></div>
+  <div class="col" id="6G"></div>
+  <div class="col" id="7G"></div>
+  <div class="col" id="8G"></div>
+  <div class="col" id="9G"></div>
+  <div class="col" id="10G"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">H</div>
+  <div class="col" id="1H"></div>
+  <div class="col" id="2H"></div>
+  <div class="col" id="3H"></div>
+  <div class="col" id="4H"></div>
+  <div class="col" id="5H"></div>
+  <div class="col" id="6H"></div>
+  <div class="col" id="7H"></div>
+  <div class="col" id="8H"></div>
+  <div class="col" id="9H"></div>
+  <div class="col" id="10H"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">I</div>
+  <div class="col" id="1I"></div>
+  <div class="col" id="2I"></div>
+  <div class="col" id="3I"></div>
+  <div class="col" id="4I"></div>
+  <div class="col" id="5I"></div>
+  <div class="col" id="6I"></div>
+  <div class="col" id="7I"></div>
+  <div class="col" id="8I"></div>
+  <div class="col" id="9I"></div>
+  <div class="col" id="10I"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">J</div>
+  <div class="col" id="1J"></div>
+  <div class="col" id="2J"></div>
+  <div class="col" id="3J"></div>
+  <div class="col" id="4J"></div>
+  <div class="col" id="5J"></div>
+  <div class="col" id="6J"></div>
+  <div class="col" id="7J"></div>
+  <div class="col" id="8J"></div>
+  <div class="col" id="9J"></div>
+  <div class="col" id="10J"></div>
+  </div>
+  </div>
+
+<div id="shipKey">
+  <h3>Your Ships</h3>
+
+<div class="shipsKey">
+  <img class="boats" src="images/001-plane.png" alt="Aircraft-Carrier">
+  <p class="ships">Aircraft Carrier (1x5)</p>
+</div>
+  <div class="shipsKey">
+  <img class="boats" src="images/004-pirates.png" alt="Destroyer">
+  <p class="ships">Destroyer (1x4)</p>
+</div>
+  <div class="shipsKey">
+  <img class="boats" src="images/002-vehicle.png" alt="Submarine">
+  <p class="ships">Submarine (1x3)</p>
+</div>
+  <div class="shipsKey">
+  <img class="boats" src="images/003-ship.png" alt="Carrier">
+  <p class="ships">Carrier (1x3)</p>
+</div>
+  <div class="shipsKey">
+  <img class="boats" src="images/005-yacht.png" alt="Cruiser">
+  <p class="shipsKey">Cruiser (1x2)</p>
+</div>
+
+
+
+</div>
+
+  <form id="cruiserPlacement">
+    <label for="boatSquare">Please enter the inital square where you would like your Cruiser to be placed(number,capital letter):</label>
+    <input type="text" id="boatSquare" name="boatSquare">
+    <br />
+    <div class="radioBtn">
+    <input type="radio" name="place" value="vertical"
+         checked>
+    <label for="vertical">Vertical</label>
+    <input type="radio" name="place" value="horizontal">
+    <label for="horizontal">Horizontal</label>
+  </div>
+  <button type="button" class="btn btn-outline-light formBtn" id="placeShip"> Place Cruiser!
+  </button>
+</form>
+
+<form id="carrierPlacement">
+  <label for="boatSquare">Please enter the inital square where you would like your Carrier to be placed(number,capital letter):</label>
+  <input type="text" id="boatSquare" name="boatSquare">
+    <br />
+    <div class="radioBtn">
+  <input type="radio" name="placeCarrier" value="vertical"
+       checked>
+  <label for="vertical">Vertical</label>
+  <input type="radio" name="placeCarrier" value="horizontal">
+  <label for="horizontal">Horizontal</label>
+</div>
+<button type="button" class="btn btn-outline-light formBtn" id="placeCarrier"> Place Carrier!
+</button>
+</form>
+
+<form id="submarinePlacement">
+  <label for="boatSquare">Please enter the inital square where you would like your Submarine to be placed(number,capital letter):</label>
+  <input type="text" id="boatSquare" name="boatSquare">
+  <br />
+  <div class="radioBtn">
+  <input type="radio" name="placeSubmarine" value="vertical"
+       checked>
+  <label for="vertical">Vertical</label>
+  <input type="radio" name="placeSubmarine" value="horizontal">
+  <label for="horizontal">Horizontal</label>
+</div>
+<button type="button" class="btn btn-outline-light formBtn" id="placeSubmarine"> Place Submarine!
+</button>
+</form>
+
+<form id="destroyerPlacement">
+  <label for="boatSquare">Please enter the inital square where you would like your Destroyer to be placed(number,capital letter):</label>
+  <input type="text" id="boatSquare" name="boatSquare">
+  <br />
+  <div class="radioBtn">
+  <input type="radio" name="placeDestroyer" value="vertical"
+       checked>
+  <label for="vertical">Vertical</label>
+  <input type="radio" name="placeDestroyer" value="horizontal">
+  <label for="horizontal">Horizontal</label>
+</div>
+<button type="button" class="btn btn-outline-light formBtn" id="placeDestroyer"> Place Destroyer!
+</button>
+</form>
+
+<form id="airCarrierPlacement">
+  <label for="boatSquare">Please enter the inital square where you would like your Aircarft Carrier to be placed(number,capital letter):</label>
+  <input type="text" id="boatSquare" name="boatSquare">
+  <br />
+  <div class="radioBtn">
+  <input type="radio" name="placeAirCarrier" value="vertical"
+       checked>
+  <label for="vertical">Vertical</label>
+  <input type="radio" name="placeAirCarrier" value="horizontal">
+  <label for="horizontal">Horizontal</label>
+</div>
+<button type="button" class="btn btn-outline-light formBtn" id="placeAirCarrier"> Place Aircraft Carrier!
+</button>
+</form>
+
+<br><br>
+
+<div id="computerBoard">
+
+<h2>Computer Board:</h2>
+
+<div class="container" id="compBoard">
+  <div class="row">
+  <div class="col topRow leftCol"></div>
+  <div class="col topRow">1</div>
+  <div class="col topRow">2</div>
+  <div class="col topRow">3</div>
+  <div class="col topRow">4</div>
+  <div class="col topRow">5</div>
+  <div class="col topRow">6</div>
+  <div class="col topRow">7</div>
+  <div class="col topRow">8</div>
+  <div class="col topRow">9</div>
+  <div class="col topRow">10</div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">A</div>
+  <div class="col comp" id="A1"></div>
+  <div class="col comp" id="A2"></div>
+  <div class="col comp" id="A3"></div>
+  <div class="col comp" id="A4"></div>
+  <div class="col comp" id="A5"></div>
+  <div class="col comp" id="A6"></div>
+  <div class="col comp" id="A7"></div>
+  <div class="col comp" id="A8"></div>
+  <div class="col comp" id="A9"></div>
+  <div class="col comp" id="A10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">B</div>
+  <div class="col comp" id="B1"></div>
+  <div class="col comp" id="B2"></div>
+  <div class="col comp" id="B3"></div>
+  <div class="col comp" id="B4"></div>
+  <div class="col comp" id="B5"></div>
+  <div class="col comp" id="B6"></div>
+  <div class="col comp" id="B7"></div>
+  <div class="col comp" id="B8"></div>
+  <div class="col comp" id="B9"></div>
+  <div class="col comp" id="B10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">C</div>
+  <div class="col comp" id="C1"></div>
+  <div class="col comp" id="C2"></div>
+  <div class="col comp" id="C3"></div>
+  <div class="col comp" id="C4"></div>
+  <div class="col comp" id="C5"></div>
+  <div class="col comp" id="C6"></div>
+  <div class="col comp" id="C7"></div>
+  <div class="col comp" id="C8"></div>
+  <div class="col comp" id="C9"></div>
+  <div class="col comp" id="C10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">D</div>
+  <div class="col comp" id="D1"></div>
+  <div class="col comp" id="D2"></div>
+  <div class="col comp" id="D3"></div>
+  <div class="col comp" id="D4"></div>
+  <div class="col comp" id="D5"></div>
+  <div class="col comp" id="D6"></div>
+  <div class="col comp" id="D7"></div>
+  <div class="col comp" id="D8"></div>
+  <div class="col comp" id="D9"></div>
+  <div class="col comp" id="D10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">E</div>
+  <div class="col comp" id="E1"></div>
+  <div class="col comp" id="E2"></div>
+  <div class="col comp" id="E3"></div>
+  <div class="col comp" id="E4"></div>
+  <div class="col comp" id="E5"></div>
+  <div class="col comp" id="E6"></div>
+  <div class="col comp" id="E7"></div>
+  <div class="col comp" id="E8"></div>
+  <div class="col comp" id="E9"></div>
+  <div class="col comp" id="E10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">F</div>
+  <div class="col comp" id="F1"></div>
+  <div class="col comp" id="F2"></div>
+  <div class="col comp" id="F3"></div>
+  <div class="col comp" id="F4"></div>
+  <div class="col comp" id="F5"></div>
+  <div class="col comp" id="F6"></div>
+  <div class="col comp" id="F7"></div>
+  <div class="col comp" id="F8"></div>
+  <div class="col comp" id="F9"></div>
+  <div class="col comp" id="F10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">G</div>
+  <div class="col comp" id="G1"></div>
+  <div class="col comp" id="G2"></div>
+  <div class="col comp" id="G3"></div>
+  <div class="col comp" id="G4"></div>
+  <div class="col comp" id="G5"></div>
+  <div class="col comp" id="G6"></div>
+  <div class="col comp" id="G7"></div>
+  <div class="col comp" id="G8"></div>
+  <div class="col comp" id="G9"></div>
+  <div class="col comp" id="G10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">H</div>
+  <div class="col comp" id="H1"></div>
+  <div class="col comp" id="H2"></div>
+  <div class="col comp" id="H3"></div>
+  <div class="col comp" id="H4"></div>
+  <div class="col comp" id="H5"></div>
+  <div class="col comp" id="H6"></div>
+  <div class="col comp" id="H7"></div>
+  <div class="col comp" id="H8"></div>
+  <div class="col comp" id="H9"></div>
+  <div class="col comp" id="H10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">I</div>
+  <div class="col comp" id="I1"></div>
+  <div class="col comp" id="I2"></div>
+  <div class="col comp" id="I3"></div>
+  <div class="col comp" id="I4"></div>
+  <div class="col comp" id="I5"></div>
+  <div class="col comp" id="I6"></div>
+  <div class="col comp" id="I7"></div>
+  <div class="col comp" id="I8"></div>
+  <div class="col comp" id="I9"></div>
+  <div class="col comp" id="I10"></div>
+  </div>
+  <div class="row">
+  <div class="col leftCol">J</div>
+  <div class="col comp" id="J1"></div>
+  <div class="col comp" id="J2"></div>
+  <div class="col comp" id="J3"></div>
+  <div class="col comp" id="J4"></div>
+  <div class="col comp" id="J5"></div>
+  <div class="col comp" id="J6"></div>
+  <div class="col comp" id="J7"></div>
+  <div class="col comp" id="J8"></div>
+  <div class="col comp" id="J9"></div>
+  <div class="col comp" id="J10"></div>
+  </div>
+  </div>
+
+
+</div>
+
+
+
+    <script src="app.js"></script>
+  </body>
+</html>

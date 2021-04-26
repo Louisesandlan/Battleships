@@ -1,0 +1,141 @@
+body {
+  background-color: #787878;
+  margin: 2%;
+}
+
+h1 {
+  margin-bottom: 30px;
+  }
+
+button {
+margin: 0 30px 30px 30px;
+}
+
+#currentInstruction{
+  display: inline-block;
+}
+
+#instruc {
+  display: none;
+}
+
+#nextBoat {
+  display: none;
+}
+
+#submarine {
+  display: none;
+}
+
+#destroyer {
+  display: none;
+}
+
+#airCarrier {
+  display: none;
+}
+
+#beginGame {
+  display: none;
+}
+
+.currentInstruction {
+  color: red;
+}
+
+#shipKey {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  overflow: auto;
+}
+
+.shipsKey{
+  display: inline-flex;
+  align-content: center;
+}
+
+.boats {
+  width: 50px;
+  height: 50px;
+  margin: 3% 1% 0 0;
+}
+
+
+
+.container{
+  border: 3px solid black;
+  width: 800px;
+  float: left;
+}
+
+#computerBoard {
+  display: block;
+  margin-top: 80px;
+}
+
+.col {
+border: 1px solid black;
+height: 40px;
+padding: 0;
+}
+
+.topRow {
+  border-bottom: 3px solid black;
+  height: 30px;
+  text-align: center;
+}
+
+.leftCol {
+  border-right: 3px solid black;
+  text-align: center;
+  width: 80%;
+}
+
+
+.ships {
+  display: inline;
+}
+
+
+#cruiserPlacement {
+  display: none;
+}
+
+#carrierPlacement {
+  display: none;
+}
+
+#submarinePlacement {
+  display: none;
+}
+
+#destroyerPlacement {
+  display: none;
+}
+
+#airCarrierPlacement {
+  display: none;
+}
+
+.formBtn {
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+.radioBtn{
+  display: inline-block;
+}
+
+.inGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.hit {
+  background-color: red;
+}
+
+.miss {
+  background-color: blue;
+}
