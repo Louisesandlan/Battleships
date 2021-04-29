@@ -84,7 +84,7 @@ if (num == "10") {
     nextSquare = num+letter1;
     //placing crusiser square 2
     var cruiser2 = document.getElementById(nextSquare);
-    cruiser2.innerHTML += '<img class="inGrid" src="images/005-yacht.png" alt="Cruiser">';
+    cruiser2.innerHTML += '<img class="inGrid" src="005-yacht.png" alt="Cruiser">';
 
   } else if (direction == "horizontal") {
     num = parseInt(num);
@@ -95,7 +95,7 @@ if (num == "10") {
   }
     //placing crusiser square 2
     var cruiser3 = document.getElementById(nextSquare);
-    cruiser3.innerHTML += '<img class="inGrid" src="images/005-yacht.png" alt="Cruiser">';
+    cruiser3.innerHTML += '<img class="inGrid" src="005-yacht.png" alt="Cruiser">';
 
   }
   boatPlaced(square);
@@ -183,14 +183,14 @@ if (found1 == true) {
 
 //Place ship Image into choicen square
 var carrier1 = document.getElementById(square);
-carrier1.innerHTML += '<img class="inGrid" src="images/003-ship.png" alt="Carrier">';
+carrier1.innerHTML += '<img class="inGrid" src="003-ship.png" alt="Carrier">';
 var choiceLength = square.length;
 //placing carrier square 2
 var carrier2 = document.getElementById(nextSquare1);
-carrier2.innerHTML += '<img class="inGrid" src="images/003-ship.png" alt="Cruiser">';
+carrier2.innerHTML += '<img class="inGrid" src="003-ship.png" alt="Cruiser">';
 //placing carrier square 3
 var carrier3 = document.getElementById(nextSquare2);
-carrier3.innerHTML += '<img class="inGrid" src="images/003-ship.png" alt="Cruiser">';
+carrier3.innerHTML += '<img class="inGrid" src="003-ship.png" alt="Cruiser">';
 
 boatPlaced(square);
 boatPlaced(nextSquare1);
@@ -281,14 +281,14 @@ document.getElementById("submarine").onclick = function placeSubmarine(){
 
   //Place ship Image into choicen square
   var submarine1 = document.getElementById(square);
-  submarine1.innerHTML += '<img class="inGrid" src="images/002-vehicle.png" alt="submarine">';
+  submarine1.innerHTML += '<img class="inGrid" src="002-vehicle.png" alt="submarine">';
   var choiceLength = square.length;
   //placing submarine square 2
   var submarine2 = document.getElementById(nextSquare1);
-  submarine2.innerHTML += '<img class="inGrid" src="images/002-vehicle.png" alt="submarine">';
+  submarine2.innerHTML += '<img class="inGrid" src="002-vehicle.png" alt="submarine">';
   //placing submarine square 3
   var submarine3 = document.getElementById(nextSquare2);
-  submarine3.innerHTML += '<img class="inGrid" src="images/002-vehicle.png" alt="submarine">';
+  submarine3.innerHTML += '<img class="inGrid" src="002-vehicle.png" alt="submarine">';
 
   boatPlaced(square);
   boatPlaced(nextSquare1);
@@ -397,17 +397,17 @@ document.getElementById("destroyer").onclick = function placeDestroyer(){
 
   //Place ship Image into choicen square
   var destroyer1 = document.getElementById(square);
-  destroyer1.innerHTML += '<img class="inGrid" src="images/004-pirates.png" alt="destroyer">';
+  destroyer1.innerHTML += '<img class="inGrid" src="004-pirates.png" alt="destroyer">';
   var choiceLength = square.length;
   //placing destroyer square 2
   var destroyer2 = document.getElementById(nextSquare1);
-  destroyer2.innerHTML += '<img class="inGrid" src="images/004-pirates.png" alt="destroyer">';
+  destroyer2.innerHTML += '<img class="inGrid" src="004-pirates.png" alt="destroyer">';
   //placing destroyer square 3
   var destroyer3 = document.getElementById(nextSquare2);
-  destroyer3.innerHTML += '<img class="inGrid" src="images/004-pirates.png" alt="destroyer">';
+  destroyer3.innerHTML += '<img class="inGrid" src="004-pirates.png" alt="destroyer">';
   //placing destroyer square 4
   var destroyer4 = document.getElementById(nextSquare3);
-  destroyer4.innerHTML += '<img class="inGrid" src="images/004-pirates.png" alt="destroyer">';
+  destroyer4.innerHTML += '<img class="inGrid" src="004-pirates.png" alt="destroyer">';
 
   boatPlaced(square);
   boatPlaced(nextSquare1);
@@ -541,20 +541,20 @@ document.getElementById("airCarrier").onclick = function placeAirCarrier(){
 
   //Place ship Image into choicen square
   var airCarrier1 = document.getElementById(square);
-  airCarrier1.innerHTML += '<img class="inGrid" src="images/001-plane.png" alt="Air Carrier">';
+  airCarrier1.innerHTML += '<img class="inGrid" src="001-plane.png" alt="Air Carrier">';
   var choiceLength = square.length;
   //placing destroyer square 2
   var airCarrier2 = document.getElementById(nextSquare1);
-  airCarrier2.innerHTML += '<img class="inGrid" src="images/001-plane.png" alt="Air Carrier">';
+  airCarrier2.innerHTML += '<img class="inGrid" src="001-plane.png" alt="Air Carrier">';
   //placing destroyer square 3
   var airCarrier3 = document.getElementById(nextSquare2);
-  airCarrier3.innerHTML += '<img class="inGrid" src="images/001-plane.png" alt="Air Carrier">';
+  airCarrier3.innerHTML += '<img class="inGrid" src="001-plane.png" alt="Air Carrier">';
   //placing destroyer square 4
   var airCarrier4 = document.getElementById(nextSquare3);
-  airCarrier4.innerHTML += '<img class="inGrid" src="images/001-plane.png" alt="Air Carrier">';
+  airCarrier4.innerHTML += '<img class="inGrid" src="001-plane.png" alt="Air Carrier">';
   //placing airCarrier square 4
   var airCarrier5 = document.getElementById(nextSquare4);
-  airCarrier5.innerHTML += '<img class="inGrid" src="images/001-plane.png" alt="Air Carrier">';
+  airCarrier5.innerHTML += '<img class="inGrid" src="001-plane.png" alt="Air Carrier">';
 
   boatPlaced(square);
   boatPlaced(nextSquare1);
@@ -1484,10 +1484,10 @@ function compAttack(){
     var attcked = userFiller.indexOf(attackSquare);
     userFiller.splice(attcked, 1);
     hitSqaure.removeChild(hitSqaure.firstChild)
-    hitSqaure.innerHTML += '<img class="inGrid" src="images/blast.png" alt="Sqaure has been hit">';
+    hitSqaure.innerHTML += '<img class="inGrid" src="blast.png" alt="Sqaure has been hit">';
   } else if (filled2 == false){
     //document.getElementById(attackSquare)
-    hitSqaure.innerHTML += '<img class="inGrid" src="images/wave.png" alt="Sqaure has been hit">';
+    hitSqaure.innerHTML += '<img class="inGrid" src="wave.png" alt="Sqaure has been hit">';
   }
   playerShips();
 }
